@@ -1,0 +1,64 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap");
+body {
+  font-family: "Playfair Display", serif;
+  position: relative;
+  background-image: url("../images/main-bg.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: background 1s ease-in-out;
+}
+.weather-status {
+  background: rgba(0, 0, 0, 0.473);
+  width: 70vw;
+  border-radius: 15px;
+  transition: opacity 1s ease-in-out;
+}
+
+#btn-search {
+  background-color: rgb(238, 238, 238);
+}
+
+.hidden {
+  opacity: 0;
+}
+#icon {
+  width: 100px;
+  height: 100px;
+}
+
+input {
+  background-color: rgba(0, 0, 0, 0.473) !important;
+  border-radius: 5px;
+  color: #fff !important;
+  border: none !important;
+}
+::placeholder {
+  color: #fff !important;
+  font-size: 0.9rem;
+}
+.btn {
+  background-color: rgba(0, 0, 0, 0.623) !important;
+  color: #fff;
+}
+.btn:hover {
+  background-color: #fff !important;
+  color: black;
+}
+/* footer styles  */
+.site-footer {
+  height: 80px;
+  padding: 0 20px;
+  font-size: 14px;
+  color: #fff;
+  bottom: 0;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.473);
+  position: fixed;
+}
+.copyright-text {
+  margin-bottom: 0;
+}
+.copyright-text a {
+  text-decoration: none;
+  color: rgb(131, 211, 211);
+}

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Temperature Hot</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <!-- custom css  -->
+    <link rel="stylesheet" href="assets/css/custom.css" />
+  </head>
+
+  <body>
+    <main>
+      <div class="container d-flex flex-column align-items-center">
+        <div class="col-md-6 m-auto py-5">
+          <div class="input-group mb-3">
+            <input
+              id="search-input"
+              type="text"
+              class="form-control"
+              placeholder="Enter a City Name for Weather"
+            />
+            <div class="input-group-append">
+              <button id="btn-search" type="button" class="btn">Search</button>
+            </div>
+          </div>
+        </div>
+
+        <div
+          id="weather-status"
+          class="
+            weather-status
+            d-flex
+            flex-column
+            align-items-center
+            p-3
+            hidden
+            text-white
+          "
+        >
+          <img id="icon" src="" alt="" />
+          <h1 id="city-name"></h1>
+          <h3 id="temp-field"></h3>
+          <h3 id="temp-range"></h3>
+          <h1 id="desc-field" class="lead"></h1>
+        </div>
+      </div>
+
+      <!-- Site footer -->
+      <footer class="site-footer d-flex align-items-center">
+        <span class="copyright-text d-block">
+          Copyright &copy; 2021 All Rights Reserved by
+          <a target="_blank" href="https://mohammad-yasin.netlify.app/"
+            >Mohammad Yasin.</a
+          >
+        </span>
+      </footer>
+    </main>
+    <script src="assets/js/app.js"></script>
+  </body>
+</html>

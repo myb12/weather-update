@@ -51,7 +51,7 @@ input {
   color: #fff;
   width: 100vw;
   background-color: rgba(0, 0, 0, 0.473);
-  position: absolute;
+  position: fixed;
   bottom: 0;
 }
 .copyright-text {

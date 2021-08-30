@@ -9,15 +9,19 @@ const tempRange = document.getElementById("temp-range");
 const cityName = document.getElementById("city-name");
 const descFiled = document.getElementById("desc-field");
 const weatherSt = document.getElementById("weather-status");
+const errorFiled = document.getElementById("error-message-filed");
+const errorMsg = document.getElementById("error-message");
 const icon = document.getElementById("icon");
 
 //======== Handlers ========//
 btnSearch.addEventListener("click", function (e) {
   e.preventDefault();
+  if (!searchInput.value.trim()) return;
   displayWeather(searchInput.value);
 });
 
 searchInput.addEventListener("keypress", function (e) {
+  if (!searchInput.value.trim()) return;
   if (e.charCode === 13) {
     displayWeather(searchInput.value);
   }
@@ -28,12 +32,22 @@ const displayWeather = async (city) => {
   const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${KEY}`;
   const res = await fetch(url);
   const data = await res.json();
-  console.log(data);
-  tempField.innerText = `${Math.round(data.main.temp - 274.15)} °C`;
+  // console.log(data);
+  if (data.cod === "404") {
+    errorMsg.innerText = `${
+      data.message[0].toUpperCase() + data.message.slice(1)
+    } 😥`;
+    searchInput.value = "";
+    errorFiled.classList.remove("hidden");
+    return;
+  }
+
+  tempField.innerText = `${Math.round(data.main.temp - 274.15)}°C`;
   cityName.innerText = `${data.name}, ${data.sys.country}`;
+
   tempRange.innerText = `${Math.round(
     data.main.temp_min - 274.15
-  )} / ${Math.round(data.main.temp_max - 274.15)}`;
+  )}°C / ${Math.round(data.main.temp_max - 274.15)}°C`;
   descFiled.innerText = data.weather[0].main;
 
   if (data.weather[0].main == "Rain") {

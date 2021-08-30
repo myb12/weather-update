@@ -34,6 +34,7 @@ const displayWeather = async (city) => {
   const data = await res.json();
   // console.log(data);
   if (data.cod === "404") {
+    weatherSt.classList.add("hidden");
     errorMsg.innerText = `${
       data.message[0].toUpperCase() + data.message.slice(1)
     } 😥`;
@@ -41,6 +42,8 @@ const displayWeather = async (city) => {
     errorFiled.classList.remove("hidden");
     return;
   }
+
+  errorFiled.classList.add("hidden");
 
   tempField.innerText = `${Math.round(data.main.temp - 274.15)}°C`;
   cityName.innerText = `${data.name}, ${data.sys.country}`;
